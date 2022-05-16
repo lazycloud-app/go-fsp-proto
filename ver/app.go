@@ -17,5 +17,9 @@ type (
 )
 
 func (v AppVersion) String() string {
+	return fmt.Sprintf(`%d.%d.%d`, v.Major, v.Minor, v.Patch)
+}
+
+func (v AppVersion) Full() string {
 	return fmt.Sprintf(`%d.%d.%d-%s "%s" (%s) Branch:%s`, v.Major, v.Minor, v.Patch, v.MLabel, v.ReleaseName, v.ReleaseDate, v.ReleaseSatus)
 }
